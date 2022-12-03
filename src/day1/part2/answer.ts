@@ -1,8 +1,8 @@
 import { Challenge } from '../../types';
 import { data } from '../data';
 
-class D1P1 implements Challenge<number> {
-  part = 'day 1 part 1';
+class D1P2 implements Challenge<number> {
+  part = 'day 1 part 2';
 
   getAnswer = () => {
     const elves = data.split('\n\n');
@@ -20,4 +20,4 @@ class D1P1 implements Challenge<number> {
     snacks.reduce((sum, snack) => sum + snack, 0);
 }
 
-export const dayOnePartOne = new D1P1();
+export const dayOnePartOne = new D1P2();
