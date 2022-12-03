@@ -1,7 +1,6 @@
 import './style.css';
 import { PageUpdater } from './util';
-import { dayOnePartOne } from './day1/part1';
-import { dayOnePartTwo } from './day1/part2';
+import { dayOnePartOne, dayOnePartTwo } from './challenges';
 
 const main = () => {
   const part = document.getElementById('part');

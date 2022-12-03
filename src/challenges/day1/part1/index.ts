@@ -1,4 +1,4 @@
-import { Challenge } from '../../types';
+import { Challenge } from '../../../types';
 import { data } from '../data';
 
 class D1P1 implements Challenge<number> {
