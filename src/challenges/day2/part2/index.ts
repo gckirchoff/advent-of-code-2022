@@ -1,7 +1,7 @@
 import { Choice, Result, Round } from '../types';
-import { DayOne } from '../util';
+import { DayTwo } from '../util';
 
-class PartTwo extends DayOne {
+class PartTwo extends DayTwo {
   private whatIChoose = {
     A: {
       X: Choice.SCISSORS,

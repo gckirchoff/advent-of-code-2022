@@ -1,7 +1,7 @@
 import { Choice, Result } from '../types';
-import { DayOne } from '../util';
+import { DayTwo } from '../util';
 
-class PartOne extends DayOne {
+class PartOne extends DayTwo {
   private scoreIGet = {
     X: {
       value: Choice.ROCK,
