@@ -1,4 +1,5 @@
 ### IT'S TIME TO SAVE
+```diff
 + C
 - H
 + R
@@ -8,5 +9,5 @@
 + M
 - A
 + S
-
+```
 [Advent of Code](https://adventofcode.com/2022)
