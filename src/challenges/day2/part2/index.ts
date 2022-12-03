@@ -1,13 +1,8 @@
-import { Challenge } from '../../../types';
-import { data } from '../data';
-import { Choice, Result } from '../types';
-import type { Round } from '../types';
+import { Choice, Result, Round } from '../types';
+import { DayOne } from '../util';
 
-class D2P2 implements Challenge<number> {
-  part = 'day 2 part 1';
-  private data: string;
-
-  private round = {
+class PartTwo extends DayOne {
+  private whatIChoose = {
     A: {
       X: Choice.SCISSORS,
       Y: Choice.ROCK,
@@ -24,31 +19,29 @@ class D2P2 implements Challenge<number> {
       Z: Choice.ROCK,
     },
   };
-
   private howRoundEnds = {
     X: Result.LOSE,
     Y: Result.DRAW,
     Z: Result.WIN,
   };
 
-  constructor(data: string) {
-    this.data = data;
+  constructor(part: string) {
+    super(part);
   }
 
   getAnswer = () => {
     const rounds = this.getCleanedData();
-    const myScore = rounds.reduce((acc, [them, me]) => {
-      const result = this.howRoundEnds[me];
-      const myChoice = this.round[them][me];
-      acc += myChoice + result;
-      return acc;
-    }, 0);
+    const myScore = this.calculateScore(rounds);
     return myScore;
   };
 
-  private getCleanedData = (): Round[] => {
-    return this.data.split('\n').map((round) => round.split(' ') as Round);
-  };
+  private calculateScore = (rounds: Round[]): number =>
+    rounds.reduce((acc, [theirChoice, myStrategy]) => {
+      const result = this.howRoundEnds[myStrategy];
+      const myChoice = this.whatIChoose[theirChoice][myStrategy];
+      acc += myChoice + result;
+      return acc;
+    }, 0);
 }
 
-export const dayTwoPartTwo = new D2P2(data);
+export const dayTwoPartTwo = new PartTwo('Part 2');
