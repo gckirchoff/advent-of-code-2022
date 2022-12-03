@@ -16,6 +16,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 10rem;
+  grid-auto-rows: 10rem;
   gap: var(--gap);
   margin: var(--gap);
 }
