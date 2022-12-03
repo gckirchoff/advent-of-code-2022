@@ -1,3 +1,4 @@
 import { dayOnePartOne, dayOnePartTwo } from './day1';
+import { dayTwoPartOne } from './day2';
 
-export { dayOnePartOne, dayOnePartTwo };
+export { dayOnePartOne, dayOnePartTwo, dayTwoPartOne };
