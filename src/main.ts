@@ -1,4 +1,3 @@
-import './style.css';
 import { PageUpdater } from './util';
 import { dayOnePartOne, dayOnePartTwo } from './challenges';
 
