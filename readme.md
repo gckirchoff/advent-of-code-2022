@@ -1,3 +1,12 @@
-# IT'S TIME TO SAVE <p><span style="color: green;">C</span><span style="color: red;">H</span><span style="color: green;">R</span><span style="color: red;">I</span><span style="color: green;">S</span><span style="color: red;">T</span><span style="color: green;">M</span><span style="color: red;">A</span><span style="color: green;">S</span></p>
+### IT'S TIME TO SAVE
++ C
+- H
++ R
+- I
++ S
+- T
++ M
+- A
++ S
 
 [Advent of Code](https://adventofcode.com/2022)
