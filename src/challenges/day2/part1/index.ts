@@ -1,4 +1,4 @@
-import { Choice, Result } from '../types';
+import { Choice, Result, Round } from '../types';
 import { DayTwo } from '../util';
 
 class PartOne extends DayTwo {
@@ -35,13 +35,16 @@ class PartOne extends DayTwo {
 
   getAnswer = () => {
     const rounds = this.getCleanedData();
-    const myScore = rounds.reduce((acc, [them, me]) => {
+    const myScore = this.calculateScore(rounds);
+    return myScore;
+  };
+
+  calculateScore = (rounds: Round[]): number =>
+    rounds.reduce((acc, [them, me]) => {
       const myChoice = this.scoreIGet[me];
       acc += myChoice.value + myChoice.theirChoice[them];
       return acc;
     }, 0);
-    return myScore;
-  };
 }
 
 export const dayTwoPartOne = new PartOne('Part 1');
