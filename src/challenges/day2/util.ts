@@ -1,9 +1,9 @@
-import { Challenge } from '../../../types';
-import { data } from '../data';
-import { Choice, Result } from '../types';
-import type { Round } from '../types';
+import { Challenge } from '../../types';
+import { data } from './data';
+import { Choice, Result } from './types';
+import type { Round } from './types';
 
-class D2P1 implements Challenge<number> {
+abstract class Day1 implements Challenge<number> {
   part = 'day 2 part 1';
   private data: string;
   private scoreIGet = {
