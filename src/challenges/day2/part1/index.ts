@@ -1,11 +1,7 @@
-import { Challenge } from '../../../types';
-import { data } from '../data';
 import { Choice, Result } from '../types';
-import type { Round } from '../types';
+import { DayOne } from '../util';
 
-class D2P1 implements Challenge<number> {
-  part = 'day 2 part 1';
-  private data: string;
+class PartOne extends DayOne {
   private scoreIGet = {
     X: {
       value: Choice.ROCK,
@@ -33,8 +29,8 @@ class D2P1 implements Challenge<number> {
     },
   };
 
-  constructor(data: string) {
-    this.data = data;
+  constructor(part: string) {
+    super(part);
   }
 
   getAnswer = () => {
@@ -46,10 +42,6 @@ class D2P1 implements Challenge<number> {
     }, 0);
     return myScore;
   };
-
-  private getCleanedData = (): Round[] => {
-    return this.data.split('\n').map((round) => round.split(' ') as Round);
-  };
 }
 
-export const dayTwoPartOne = new D2P1(data);
+export const dayTwoPartOne = new PartOne('Part 1');

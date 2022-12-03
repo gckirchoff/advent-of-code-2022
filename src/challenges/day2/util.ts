@@ -1,12 +1,13 @@
 import { Challenge } from '../../types';
 import type { Round } from './types';
+import { data } from './data';
 
-export abstract class Day1 implements Challenge<number> {
+export abstract class DayOne implements Challenge<number> {
   part: string;
-  private data: string;
+  private data = data;
 
-  constructor(part: string, data: string) {
-    this.part = part;
+  constructor(part: string) {
+    this.part = `Day 1 ${part}`;
     this.data = data;
   }
 
