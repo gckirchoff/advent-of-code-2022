@@ -2,7 +2,7 @@ import { Challenge } from '../../../types';
 import { data } from '../data';
 
 class D1P2 implements Challenge<number> {
-  part = 'day 1 part 2';
+  part = 'Day 1 Part 2';
 
   getAnswer = () => {
     const elves = data.split('\n\n');
