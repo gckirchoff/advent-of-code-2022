@@ -2,11 +2,10 @@ import { PageUpdater } from './util';
 import { dayOnePartOne, dayOnePartTwo } from './challenges';
 
 const main = () => {
-  const part = document.getElementById('part');
-  const answer = document.getElementById('answer');
-  const pageUpdater = new PageUpdater(part, answer);
+  const app = document.getElementById('app');
+  const pageUpdater = new PageUpdater(app);
 
-  pageUpdater.updatePage(dayOnePartTwo);
+  pageUpdater.updatePage([dayOnePartOne, dayOnePartTwo]);
 };
 
 main();
