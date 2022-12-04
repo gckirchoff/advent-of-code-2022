@@ -2,6 +2,7 @@ import { PageUpdater } from './util';
 import {
 	dayOnePartOne,
 	dayOnePartTwo,
+	dayThreePartOne,
 	dayTwoPartOne,
 	dayTwoPartTwo,
 } from './challenges';
@@ -15,6 +16,7 @@ const main = () => {
 		dayOnePartTwo,
 		dayTwoPartOne,
 		dayTwoPartTwo,
+		dayThreePartOne,
 	]);
 };
 
