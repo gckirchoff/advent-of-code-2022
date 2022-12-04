@@ -1,9 +1,10 @@
 import { Challenge } from '../../types';
+import { Alphabetical } from './types';
 import { data } from './data';
 
-export abstract class DayThree implements Challenge<number> {
-	part: string;
-	protected priorities = {
+//8039 2510
+export class Priority {
+	priorities = {
 		a: 1,
 		b: 2,
 		c: 3,
@@ -57,6 +58,30 @@ export abstract class DayThree implements Challenge<number> {
 		Y: 51,
 		Z: 52,
 	} as const;
+
+	getPriority = (item: Alphabetical): number => this.priorities[item];
+
+	makeMap = (items: string) =>
+		items.split('').reduce((acc, item) => {
+			const alphaItem = this.throwIfNotAlphabetical(item);
+			if (!(alphaItem in acc)) {
+				acc[alphaItem] = 0;
+			}
+			acc[alphaItem]++;
+			return acc;
+		}, {} as { [key in Alphabetical]: number });
+
+	private throwIfNotAlphabetical = (item: string): Alphabetical => {
+		if (!item.match(/[a-zA-Z]/)) {
+			throw new Error('Item is not alphabetical');
+		}
+		return item as Alphabetical;
+	};
+}
+
+export abstract class DayThree implements Challenge<number> {
+	part: string;
+	protected priority = new Priority();
 	private data = data;
 
 	constructor(part: string) {

@@ -11,7 +11,7 @@ class PartOne extends DayThree {
 		const compartmentalizedSacks = this.divideSackCompartments(sacks);
 		const prioritySum = compartmentalizedSacks.reduce((acc, sack) => {
 			const repeatedItem = this.getRepeatedItem(sack);
-			const priority = this.priorities[repeatedItem];
+			const priority = this.priority.getPriority(repeatedItem);
 			acc += priority;
 			return acc;
 		}, 0);
@@ -29,8 +29,8 @@ class PartOne extends DayThree {
 	private getRepeatedItem = ([
 		firstCompartment,
 		secondCompartment,
-	]: TwoCompartmentSack): keyof typeof this.priorities => {
-		const firstCompartmentMap = this.makeMap(firstCompartment);
+	]: TwoCompartmentSack): keyof typeof this.priority.priorities => {
+		const firstCompartmentMap = this.priority.makeMap(firstCompartment);
 		for (let i = 0; i < secondCompartment.length; i++) {
 			const item = secondCompartment[i] as Alphabetical;
 			if (item in firstCompartmentMap) {
@@ -39,20 +39,6 @@ class PartOne extends DayThree {
 		}
 		return 'a';
 	};
-
-	private makeMap = <T extends keyof typeof this.priorities>(
-		items: string
-	): { [key in T]: number } =>
-		items.split('').reduce((acc, item) => {
-			if (!item.match(/[a-zA-Z]/)) {
-				throw new Error('Item is not alphabetical');
-			}
-			if (!(item in acc)) {
-				acc[item as T] = 0;
-			}
-			acc[item as T]++;
-			return acc;
-		}, {} as { [key in T]: number });
 }
 
 export const dayThreePartOne = new PartOne();

@@ -11,7 +11,7 @@ class PartTwo extends DayThree {
 		const groups = this.groupElves(sacks);
 		const prioritySum = groups.reduce((acc, group) => {
 			const commonItem = group.getCommonItem();
-			acc += this.priorities[commonItem];
+			acc += this.priority.getPriority(commonItem);
 			return acc;
 		}, 0);
 		return prioritySum;
