@@ -37,7 +37,7 @@ class PartOne extends DayThree {
 				return item;
 			}
 		}
-		return 'a';
+		throw new Error('No repeated items');
 	};
 }
 

@@ -2,7 +2,6 @@ import { Challenge } from '../../types';
 import { Alphabetical } from './types';
 import { data } from './data';
 
-//8039 2510
 export class Priority {
 	priorities = {
 		a: 1,
