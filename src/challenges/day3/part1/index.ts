@@ -62,7 +62,8 @@ class PartOne extends DayThree {
 
 	getAnswer = () => {
 		const sacks = this.getCleanedData();
-		const prioritySum = sacks.reduce((acc, sack) => {
+		const compartmentalizedSacks = this.divideSackCompartments(sacks);
+		const prioritySum = compartmentalizedSacks.reduce((acc, sack) => {
 			const repeatedItem = this.getRepeatedItem(sack);
 			const priority = this.priorities[repeatedItem];
 			acc += priority;
@@ -70,6 +71,14 @@ class PartOne extends DayThree {
 		}, 0);
 		return prioritySum;
 	};
+
+	private divideSackCompartments = (sacks: string[]): TwoCompartmentSack[] =>
+		sacks.map((sack) => {
+			const middle = sack.length / 2;
+			const firstCompartment = sack.slice(0, middle);
+			const secondCompartment = sack.slice(middle, sack.length);
+			return [firstCompartment, secondCompartment];
+		});
 
 	private getRepeatedItem = ([
 		firstCompartment,
