@@ -27,13 +27,18 @@ export class Group {
 
 	private makeMap = (items: string) =>
 		items.split('').reduce((acc, item) => {
-			if (!item.match(/[a-zA-Z]/)) {
-				throw new Error('Item is not alphabetical');
+			const alphaItem = this.throwIfNotAlphabetical(item);
+			if (!(alphaItem in acc)) {
+				acc[alphaItem] = 0;
 			}
-			if (!(item in acc)) {
-				acc[item as Alphabetical] = 0;
-			}
-			acc[item as Alphabetical]++;
+			acc[alphaItem]++;
 			return acc;
 		}, {} as { [key in Alphabetical]: number });
+
+	private throwIfNotAlphabetical = (item: string): Alphabetical => {
+		if (!item.match(/[a-zA-Z]/)) {
+			throw new Error('Item is not alphabetical');
+		}
+		return item as Alphabetical;
+	};
 }
