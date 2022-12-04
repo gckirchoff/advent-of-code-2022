@@ -1,6 +1,6 @@
 import { Challenge } from '../../types';
 import { data } from './data';
-import { Sack } from './types';
+import { TwoCompartmentSack } from './types';
 
 export abstract class DayThree implements Challenge<number> {
 	part: string;
@@ -13,7 +13,7 @@ export abstract class DayThree implements Challenge<number> {
 
 	abstract getAnswer: () => number;
 
-	protected getCleanedData = (): Sack[] => {
+	protected getCleanedData = (): TwoCompartmentSack[] => {
 		return this.data.split('\n').map((sack) => {
 			const middle = sack.length / 2;
 			const firstCompartment = sack.slice(0, middle);

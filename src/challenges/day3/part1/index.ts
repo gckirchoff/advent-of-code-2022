@@ -1,4 +1,4 @@
-import { Alphabetical, Sack } from '../types';
+import { Alphabetical, TwoCompartmentSack } from '../types';
 import { DayThree } from '../util';
 
 class PartOne extends DayThree {
@@ -74,7 +74,7 @@ class PartOne extends DayThree {
 	private getRepeatedItem = ([
 		firstCompartment,
 		secondCompartment,
-	]: Sack): keyof typeof this.priorities => {
+	]: TwoCompartmentSack): keyof typeof this.priorities => {
 		const firstCompartmentMap = this.makeMap(firstCompartment);
 		for (let i = 0; i < secondCompartment.length; i++) {
 			const item = secondCompartment[i] as Alphabetical;

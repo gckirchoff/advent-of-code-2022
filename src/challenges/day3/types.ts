@@ -1,4 +1,4 @@
-export type Sack = string[];
+export type TwoCompartmentSack = string[];
 
 export type Alphabetical =
 	| 'a'
