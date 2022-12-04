@@ -3,6 +3,7 @@ import {
 	dayOnePartOne,
 	dayOnePartTwo,
 	dayThreePartOne,
+	dayThreePartTwo,
 	dayTwoPartOne,
 	dayTwoPartTwo,
 } from './challenges';
@@ -17,6 +18,7 @@ const main = () => {
 		dayTwoPartOne,
 		dayTwoPartTwo,
 		dayThreePartOne,
+		dayThreePartTwo,
 	]);
 };
 
